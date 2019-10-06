@@ -102,7 +102,7 @@ public class World
 		if(isLoaded)
 		{
 			timer++;
-			if(timer > 300)
+			if(timer > 150)
 			{
 				timer = 0;
 				waveTimer -= 1;

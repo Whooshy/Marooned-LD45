@@ -214,7 +214,7 @@ public class Inventory
 							{
 								remove(Item.ARROWHEAD, 1);
 								remove(Item.VINES, 1);
-								remove(Item.STICKS, 2);
+								remove(Item.STICKS, 1);
 								
 								Engine.playSound("/audio/confirm.wav");
 								add(Item.ARROW, 3);
@@ -231,19 +231,16 @@ public class Inventory
 				add(Item.ARROWHEAD, 1);
 				return;
 			}
-			if(slotID[i] == Item.AIR)
+		}
+		for(int i = 0; i < 8; i++)
+		{
+			if(slotSelected[i] >= 1)
 			{
-				for(int j = 0; j < 8; j++) 
-				{
-					slotSelected[j] = 0;
-					if(toggleSound)
-					{
-						Engine.playSound("/audio/denial.wav");
-						toggleSound = false;
-					}
-				}
+				slotSelected[i] = 0;
 			}
 		}
+		
+		Engine.playSound("/audio/denial.wav");
 	}
 	
 	public void add(Item id, int amount)
